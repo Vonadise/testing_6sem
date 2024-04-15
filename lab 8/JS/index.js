@@ -29,7 +29,7 @@ function run() {
 
     let airport = new Airport(planes);
     let militaryAirport = new Airport(airport.getMilitaryPlanes());
-    let passengerAirport = new Airport(airport.getPassengerPlane());
+    let passengerAirport = new Airport(airport.getPassengerPlanes());
 
     console.log(`Military airport sorted by max distance: ${Airport.print(militaryAirport.sortByMaxDistance())}`);
     console.log(`Passenger airport sorted by max speed: ${Airport.print(passengerAirport.sortByMaxSpeed())}`);

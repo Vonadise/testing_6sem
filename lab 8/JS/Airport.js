@@ -13,7 +13,7 @@ class Airport {
         return JSON.stringify(planes);
     }
 
-    getPassengerPlane() {
+    getPassengerPlanes() {
         return this.planes.filter(plane => plane instanceof PassengerPlane)
     }
 
@@ -38,14 +38,9 @@ class Airport {
     }
 
     getPassengerPlaneWithMaxPassengersCapacity() {
-        let planes = this.getPassengerPlane();
-        let planeWithMaxCapacity = planes[0];
-        for (let i = 0; i < planes.length; i++) {
-            if (planes[i].getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity()) {
-                planeWithMaxCapacity = planes[i];
-            }
-        }
-        return planeWithMaxCapacity;
+        return this.getPassengerPlanes().reduce((maxPlane, plane) =>
+            plane.getPassengersCapacity() > maxPlane.getPassengersCapacity() ? plane : maxPlane
+        );
     }
 
     sortByMaxDistance() {
