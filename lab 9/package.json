@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "chromedriver": "^123.0.1",
+    "selenium-webdriver": "^4.19.0",
+    "supertest": "^6.3.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
