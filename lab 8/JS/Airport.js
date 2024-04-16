@@ -1,7 +1,7 @@
 const PassengerPlane = require('./Planes/PassengerPlane');
 const MilitaryPlane = require('./Planes/MilitaryPlane');
 const MilitaryType = require('./models/militaryType');
-const experimentalPlane = require('./Planes/ExperimentalPlane');
+const ExperimentalPlane = require('./Planes/ExperimentalPlane');
 
 class Airport {
 
@@ -34,7 +34,7 @@ class Airport {
     }
 
     getExperimentalPlanes() {
-        return this.planes.filter(plane => plane instanceof experimentalPlane)
+        return this.planes.filter(plane => plane instanceof ExperimentalPlane)
     }
 
     getPassengerPlaneWithMaxPassengersCapacity() {
