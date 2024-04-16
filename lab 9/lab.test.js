@@ -14,6 +14,22 @@ test('проверка поиска товара на nsv.by', async () => {
 
 }, 40000);
 
+test('проверка поиска товара на antenka.by', async () => {
+    const {Builder, By, Key, until, Browser} = require('selenium-webdriver');
+
+    let driver = await new Builder().forBrowser(Browser.CHROME).build();
+
+    await driver.get('https://antenka.by/');
+
+    await driver.findElement(By.className('form-control')).sendKeys('ХОЛОДИЛЬНИК ATLANT', Key.RETURN)
+    await driver.wait(until.elementLocated(By.className('panel-body')), 10000);
+
+    const searchResults = await driver.findElements(By.className('panel-body'));
+    console.log('Количество результатов поиска:', searchResults.length);
+    await driver.quit();
+
+}, 40000);
+
 
 test('test search in google', async () => {
     const { Builder, By, Key, until, Browser } = require('selenium-webdriver');
