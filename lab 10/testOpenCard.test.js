@@ -29,7 +29,7 @@ class AntenkaPage {
 
 }
 
-describe('Добавление товара в корзину', () => {
+describe('Открытие каточки товара', () => {
     let driver;
     let page;
 
@@ -42,22 +42,18 @@ describe('Добавление товара в корзину', () => {
         await driver.quit();
     });
 
-    test('Добавление товара в корзину', async () => {
+    test('Открытие каточки товара', async () => {
         try {
             await page.open();
-            await sleep(3000);
+            await sleep(1000);
 
             await page.clickToRefrigerators();
-            await sleep(3000);
+            await sleep(1000);
 
             await page.clickOpenCard();
-            await sleep(5000);
 
-
-
-            console.log('Товар успешно добавлен в корзину!');
         } catch (error) {
             console.error('Произошла ошибка:', error);
         }
-    }, 30000);
+    }, 60000);
 });

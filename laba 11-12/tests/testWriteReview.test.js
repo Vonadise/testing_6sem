@@ -2,7 +2,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 const MainPage = require('../pages/MainPage');
 const OtzyvyPage = require('../pages/OtzyvyPage');
 
-describe('Проверка поиска товара на antenka.by', () => {
+describe('Написание отзыва', () => {
     let driver;
     let mainPage;
     let otzyvyPage;
@@ -18,7 +18,7 @@ describe('Проверка поиска товара на antenka.by', () => {
         await driver.quit();
     });
 
-    test('Поиск товара', async () => {
+    test('Написание отзыва', async () => {
         await mainPage.open();
         await mainPage.clickToOtzyvy();
         await otzyvyPage.enteringName("Максим");
